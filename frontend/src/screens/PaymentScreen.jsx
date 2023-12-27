@@ -43,7 +43,7 @@ const PaymentScreen = () => {
               name='paymentMethod'
               value='PayPal'
               checked
-              onChang={(e) => setPaymentMethod(e.target.value)}
+              onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
           </Col>
         </Form.Group>
