@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
+import Meta from "../components/Meta"
 import { Row, Col, Image, ListGroup, Card, Button, Form} from 'react-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 import {toast} from 'react-toastify'
@@ -62,6 +63,7 @@ const ProductScreen = () => {
         <Message variant='danger'>{error?.data?.message || error.error}</Message>
       ) : (
           <>
+        <Meta title={product.name}/>
         <Row>
         <Col md={5}>
           <Image src={product.image} alt={product.name} fluid/>
