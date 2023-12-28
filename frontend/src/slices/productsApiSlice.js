@@ -37,8 +37,21 @@ export const productsApiSlice = apiSlice.injectEndpoints({
         method: 'POST',
         body: data,
       }),
+    }),
+    deleteProduct: builder.mutation({
+      query: (productId) => ({
+        url: `${PRODUCTS_URL}/${productId}`,
+        method: 'DELETE'
+      })
     })
   }),
 });
 
-export const {useGetProductsQuery, useGetProductDetailsQuery, useCreateProductMutation, useUpdateProductMutation, useUploadProductImageMutation} = productsApiSlice; //convention whne exporting const
+export const {
+  useGetProductsQuery, 
+  useGetProductDetailsQuery, 
+  useCreateProductMutation, 
+  useUpdateProductMutation, 
+  useUploadProductImageMutation,
+  useDeleteProductMutation,
+} = productsApiSlice; //convention whne exporting const
