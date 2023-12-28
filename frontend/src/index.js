@@ -31,6 +31,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
       <Route index={true} path="/" element={<HomeScreen/>}></Route>  {/* index is to ensure that the HomeScreen only will be shown */}
+      <Route path="/page/:pageNumber" element={<HomeScreen/>}></Route>  
       <Route path="/product/:id" element={<ProductScreen/>}></Route>  
       <Route path="/cart" element={<CartScreen/>}></Route>
       <Route path="/login" element={<LoginScreen/>}></Route>
@@ -47,6 +48,7 @@ const router = createBrowserRouter(
       <Route path="" element={<AdminRoute/>}>
         <Route path="/admin/orderlist" element={<OrderListScreen/>}></Route>
         <Route path="/admin/productlist" element={<ProductListScreen/>}></Route>
+        <Route path="/admin/productlist/:pageNumber" element={<ProductListScreen/>}></Route>
         <Route path="/admin/product/:id/edit" element={<ProductEditScreen/>}></Route>
         <Route path="/admin/userlist" element={<UserListScreen/>}></Route>
         <Route path="/admin/user/:id/edit" element={<UserEditScreen/>}></Route>
